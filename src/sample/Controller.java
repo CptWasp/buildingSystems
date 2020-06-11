@@ -44,6 +44,18 @@ public class Controller implements Initializable {
         typeCheckBox.setItems(cb1Array);
         typeCheckBox.setValue("default");
 
+        authButton.setOnAction(event -> {
+            String loginText = loginField.getText().trim();
+            String passText =  passwordField.getText().trim();
+
+            if(!loginText.equals("") && !passText.equals("")){
+                logininigUser(loginText, passText);
+            }else {
+                System.out.println("Error!!! Pass & login is empty");
+            }
+
+        });
+
         signOutButton.setOnAction(event->{
             System.out.println("регистрация в системе");
             signOutButton.getScene().getWindow().hide();
@@ -66,6 +78,10 @@ public class Controller implements Initializable {
 
 
 
+
+    }
+
+    private void logininigUser(String loginText, String passText) {
 
     }
 }
