@@ -39,7 +39,7 @@
                <opaqueInsets>
                   <Insets right="50.0" />
                </opaqueInsets></PasswordField>
-            <Button fx:id="signOutButton" layoutX="406.0" layoutY="211.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="131.0" style="-fx-background-color: #222; -fx-background-radius: 20;" text="Зарегестрироваться" textFill="WHITE">
+            <Button fx:id="signOutButton" layoutX="406.0" layoutY="211.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="131.0" style="-fx-background-color: #222; -fx-background-radius: 20;" text="Зарегистрироваться" textFill="WHITE">
                <opaqueInsets>
                   <Insets right="50.0" />
                </opaqueInsets></Button>
