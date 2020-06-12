@@ -16,7 +16,7 @@ public class SignUpController {
     private URL location;
 
     @FXML
-    private TextField nameSigner;
+    private TextField firstnameSigner;
 
     @FXML
     private TextField emailSigner;
@@ -28,7 +28,22 @@ public class SignUpController {
     private Button signUpEndButton;
 
     @FXML
-    void initialize() {
+    private TextField secondNameSigner;
 
+    @FXML
+    private TextField nameSigner;
+
+    @FXML
+    private TextField levelSigner;
+
+    @FXML
+    void initialize() {
+        DBHandler handler = new DBHandler();
+
+        signUpEndButton.setOnAction(event -> {
+            System.out.println("отработало");
+            handler.signUpUser(firstnameSigner.getText(), nameSigner.getText(), secondNameSigner.getText(),"РФ",
+                    emailSigner.getText(), passwordSigner.getText(), levelSigner.getText());
+        });
     }
 }

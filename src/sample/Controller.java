@@ -75,10 +75,6 @@ public class Controller implements Initializable {
             stage.showAndWait();
         });
 
-
-
-
-
     }
 
     private void logininigUser(String loginText, String passText) {
