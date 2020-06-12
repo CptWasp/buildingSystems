@@ -28,19 +28,19 @@ public class DBHandler extends DBConnection {
                 "," + dbConstants.USERS_PASS + "," + "," + dbConstants.USERS_LEVEL +")" + "VALUES(?,?,?,?,?,?,?)"; **/
 
 
-        String insert = "INSERT INTO `"+dbConstants.USERS_TABLE+"`(`"+dbConstants.USERS_ID+"`, `"+dbConstants.USERS_NAME+"`, `"+dbConstants.USERS_FIRSTNAME+"`, `"+dbConstants.USERS_SECONDNAME+"`, `"+dbConstants.USERS_EMAIL+"`, `"+dbConstants.USERS_ADDRES+"`, `"+dbConstants.USERS_PASS+"`, `object_id`, `"+dbConstants.USERS_LEVEL+"`, `user_bday`) VALUES (NULL, '?', '?', '?', '?', '?', '?', '?', '2', '2020-06-09')";
-
+        //String insert = "INSERT INTO `"+dbConstants.USERS_TABLE+"`(`"+dbConstants.USERS_ID+"`, `"+dbConstants.USERS_NAME+"`, `"+dbConstants.USERS_FIRSTNAME+"`, `"+dbConstants.USERS_SECONDNAME+"`, `"+dbConstants.USERS_EMAIL+"`, `"+dbConstants.USERS_ADDRES+"`, `"+dbConstants.USERS_PASS+"`, `object_id`, `"+dbConstants.USERS_LEVEL+"`, `user_bday`) VALUES (NULL, '?', '?', '?', '?', '?', '?', '?', '2', '2020-06-09')";
+        String insert = "INSERT INTO `users_tb` (`user_id`, `user_name`, `user_firstname`, `user_secondname`, `user_email`, `user_addres`, `pass`, `object_id`, `access_level`, `user_bday`) VALUES (NULL, 'Марк', 'Интерполов', 'Црувич', 'bandito@gmail.com', 'РФ', '1234', '1', '2', '2020-06-10');";
 
 
         try {
             PreparedStatement prSt = getDbConnection().prepareStatement(insert);
-            prSt.setString(1, name);
-            prSt.setString(2, firstName);
-            prSt.setString(3, secondName);
-            prSt.setString(4, address);
-            prSt.setString(5, email);
-            prSt.setString(6, password);
-            prSt.setString(7, accessLevel);
+//            prSt.setString(1, name);
+//            prSt.setString(2, firstName);
+//            prSt.setString(3, secondName);
+//            prSt.setString(4, address);
+//            prSt.setString(5, email);
+//            prSt.setString(6, password);
+//            prSt.setString(7, accessLevel);
             prSt.executeUpdate();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
