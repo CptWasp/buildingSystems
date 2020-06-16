@@ -47,13 +47,21 @@ public class UserController {
     private TableView<ObjectFromBD> table_01;
 
     @FXML
-    private TableColumn<ObjectFromBD, String> tb_1;
+    private TableColumn<ObjectFromBD, String> ID_COL;
 
     @FXML
-    private TableView<ObjectFromBD> table_10;
+    private TableColumn<ObjectFromBD, String> COMMENT_COL;
 
     @FXML
-    private TableColumn<ObjectFromBD, String> tb_2;
+    private TableColumn<ObjectFromBD, String> STATUS_COL;
+
+    @FXML
+    private TableColumn<ObjectFromBD, String> NAME_COL;
+
+    @FXML
+    private TableColumn<ObjectFromBD, String> OBJECT_COL;
+    @FXML
+    private TableColumn<ObjectFromBD, String> D_COLL;
 
     @FXML
     void initialize() {
@@ -78,8 +86,9 @@ public class UserController {
 
         upd.setOnAction(event -> {
         DBWorker worker = new DBWorker();
-        String inWorkSelection = "SELECT `application_id`, `comment`, `status`, `object_id`, `user_id` FROM `applications_tb` WHERE `status` = 0";
-        String preWorkSelection = "SELECT `application_id`, `comment`, `status`, `object_id`, `user_id` FROM `applications_tb` WHERE `status` = 1";
+        String inWorkSelection = "SELECT `application_id`, `comment`, `status`, `object_name`, `user_name`, `d_link` FROM `applications_tb`,`users_tb`,`objects_tb` WHERE `applications_tb`.`user_id`=`users_tb`.`user_id` AND `applications_tb`.`object_id`=`objects_tb`.`object_id`";
+
+            //String preWorkSelection = "SELECT `application_id`, `comment`, `status`, `object_id`, `user_id` FROM `applications_tb` WHERE `status` = 1";
 
 
         try {
@@ -94,21 +103,26 @@ public class UserController {
                 obj.setStatus(resultSet.getString(3));
                 obj.setObject_name(resultSet.getString(4));
                 obj.setUser_name(resultSet.getString(5));
+                obj.setLink(resultSet.getString(6));
+                System.out.println(obj.getId()+obj.getComment()+obj.getStatus()+obj.getUser_name()+obj.getObject_name()+obj.getLink());
 
-                ObjectData.add(new ObjectFromBD(obj.getComment(), obj.getComment(), obj.getComment(), obj.getComment(), obj.getComment(), obj.getComment()));
+                ObjectData.add(new ObjectFromBD(obj.getId(), obj.getComment(), obj.getStatus(), obj.getUser_name(), obj.getObject_name(), obj.getLink()));
             }
+
+
+            ID_COL.setCellValueFactory(new PropertyValueFactory<ObjectFromBD, String>("ID"));
+            COMMENT_COL.setCellValueFactory(new PropertyValueFactory<ObjectFromBD, String>("Комментарий"));
+            STATUS_COL.setCellValueFactory(new PropertyValueFactory<ObjectFromBD, String>("статус"));
+            NAME_COL.setCellValueFactory(new PropertyValueFactory<ObjectFromBD, String>("Имя пользователя"));
+            OBJECT_COL.setCellValueFactory(new PropertyValueFactory<ObjectFromBD, String>("Название объекта"));
+            D_COLL.setCellValueFactory(new PropertyValueFactory<ObjectFromBD, String>("ссылка на объект"));
+
+            table_01.setItems(ObjectData);
 
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-
-
-        tb_1.setCellValueFactory(new PropertyValueFactory<ObjectFromBD, String>("Активные"));
-        table_01.setItems(ObjectData);
-
-//        tb_2.setCellValueFactory(new PropertyValueFactory<ObjectFromBD, String>("Завершенные"));
-//        table_10.setItems(ObjectData);
 
         });
 

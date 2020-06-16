@@ -8,7 +8,7 @@ public class ObjectFromBD {
     private String link;
     private String status;
 
-    public ObjectFromBD(String id, String object_name, String user_name, String comment, String link, String status) {
+    public ObjectFromBD(String id, String comment, String status, String user_name,  String object_name,  String link) {
         this.id = id;
         this.object_name = object_name;
         this.user_name = user_name;
@@ -68,10 +68,6 @@ public class ObjectFromBD {
     public void setComment(String comment) {
         this.comment = comment;
     }
-
-
-
-
 
 
 }

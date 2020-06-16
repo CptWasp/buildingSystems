@@ -97,7 +97,7 @@ public class Controller implements Initializable {
                 System.out.println("Вход в систему как "+typeCheckBox.getValue());
                 signOutButton.getScene().getWindow().hide();
                 FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource("UserView.fxml"));
+                loader.setLocation(getClass().getResource("tableForUser.fxml"));
                 try {
                     loader.load();
                 } catch (IOException e) {
