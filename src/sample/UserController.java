@@ -9,13 +9,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.ProgressBar;
-import javafx.scene.control.TextField;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
-public class BuilderController {
+public class UserController {
 
     @FXML
     private ResourceBundle resources;
@@ -24,31 +23,25 @@ public class BuilderController {
     private URL location;
 
     @FXML
-    private Button WorksTextButton;
-
-    @FXML
-    private ProgressBar progressChecker;
-
-    @FXML
     private ImageView clientPhoto;
 
     @FXML
     private Label clientName;
 
     @FXML
-    private ListView<?> doneWorks;
-
-    @FXML
-    private ListView<?> inWorks;
-
-    @FXML
     private Button quitButton;
 
     @FXML
-    private TextField WorksTextField;
+    private TableView<?> table_01;
 
     @FXML
-    private Button WorksAdder;
+    private TableColumn<?, ?> tb_1;
+
+    @FXML
+    private TableView<?> table_10;
+
+    @FXML
+    private TableColumn<?, ?> tb_2;
 
     @FXML
     void initialize() {
@@ -69,6 +62,8 @@ public class BuilderController {
             stage.setScene(new Scene(root));
             stage.showAndWait();
         });
+
+
 
 
     }

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.UserController">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="450.0" prefWidth="640.0" style="-fx-background-color: #444;" VBox.vgrow="ALWAYS">
+         <children>
+            <Label layoutX="453.0" layoutY="61.0" text="Завершенные работы" textFill="WHITE" />
+            <ImageView fx:id="clientPhoto" fitHeight="40.0" fitWidth="40.0" layoutX="23.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="clientName" layoutX="96.0" layoutY="31.0" prefHeight="17.0" prefWidth="166.0" text="Фамилия Имя Отчество" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="73.0" layoutY="61.0" text="Работы в процессе" textFill="WHITE" />
+            <Button fx:id="quitButton" layoutX="262.0" layoutY="29.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="51.0" style="-fx-background-color: #333; -fx-background-radius: 20;" text="Выход" textFill="WHITE" />
+            <TableView fx:id="table_01" layoutX="35.0" layoutY="96.0" prefHeight="216.0" prefWidth="200.0">
+              <columns>
+                <TableColumn fx:id="tb_1" prefWidth="199.0" text="Активные" />
+              </columns>
+            </TableView>
+            <TableView fx:id="table_10" layoutX="414.0" layoutY="92.0" prefHeight="216.0" prefWidth="200.0">
+               <columns>
+                  <TableColumn fx:id="tb_2" prefWidth="199.0" text="Завершенные" />
+               </columns>
+            </TableView>
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>

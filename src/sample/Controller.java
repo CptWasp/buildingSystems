@@ -62,7 +62,6 @@ public class Controller implements Initializable {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("SignUpVision.fxml"));
 
-
             try {
                 loader.load();
             } catch (IOException e) {
@@ -78,6 +77,42 @@ public class Controller implements Initializable {
     }
 
     private void logininigUser(String loginText, String passText) {
+
+        if(typeCheckBox.getValue().equals("Строитель")) {
+            System.out.println("Вход в систему как "+typeCheckBox.getValue());
+            signOutButton.getScene().getWindow().hide();
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("buildView.fxml"));
+            try {
+                loader.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            Parent root = loader.getRoot();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+        }else{
+            if (typeCheckBox.getValue().equals("Клиент")){
+                System.out.println("Вход в систему как "+typeCheckBox.getValue());
+                signOutButton.getScene().getWindow().hide();
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("UserView.fxml"));
+                try {
+                    loader.load();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                Parent root = loader.getRoot();
+                Stage stage = new Stage();
+                stage.setScene(new Scene(root));
+                stage.showAndWait();
+            }else{
+                System.out.println("Вход в систему как "+typeCheckBox.getValue()+" пока запрещен");
+            }
+        }
+
+
 
     }
 }
