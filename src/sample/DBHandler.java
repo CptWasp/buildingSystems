@@ -50,6 +50,21 @@ public class DBHandler extends DBConnection {
     }
 
 
+    public void insertComment(String comment){
+        String techInsert = "INSERT INTO `applications_tb` (`application_id`, `comment`, `status`, `object_id`, `user_id`) VALUES"
+                +" (NULL, '"+comment+"', '0', '1', '3');";
+
+        try {
+            PreparedStatement prSt = getDbConnection().prepareStatement(techInsert);
+            prSt.executeUpdate();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 
 
 }

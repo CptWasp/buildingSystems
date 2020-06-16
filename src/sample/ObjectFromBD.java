@@ -37,7 +37,6 @@ public class ObjectFromBD {
         this.link = link;
     }
 
-
     public String getObject_name() {
         return object_name;
     }

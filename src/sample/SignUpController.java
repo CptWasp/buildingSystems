@@ -44,6 +44,7 @@ public class SignUpController {
             System.out.println("отработало");
             handler.signUpUser(firstnameSigner.getText(), nameSigner.getText(), secondNameSigner.getText(),"РФ",
                     emailSigner.getText(), passwordSigner.getText(), levelSigner.getText());
+            System.out.println("Пользователь успешно добавлен!");
         });
     }
 }
