@@ -26,8 +26,6 @@ public class DBHandler extends DBConnection {
         //String insert = "INSERT INTO `"+dbConstants.USERS_TABLE+"`(`"+dbConstants.USERS_ID+"`, `"+dbConstants.USERS_NAME+"`, `"+dbConstants.USERS_FIRSTNAME+"`, `"+dbConstants.USERS_SECONDNAME+"`, `"+dbConstants.USERS_EMAIL+"`, `"+dbConstants.USERS_ADDRES+"`, `"+dbConstants.USERS_PASS+"`, `object_id`, `"+dbConstants.USERS_LEVEL+"`, `user_bday`) VALUES (NULL, '?', '?', '?', '?', '?', '?', '?', '2', '2020-06-09')";
         String insert = "INSERT INTO `users_tb` (`user_id`, `user_name`, `user_firstname`, `user_secondname`, `user_email`, `user_addres`, `pass`, `object_id`, `access_level`, `user_bday`) VALUES"
                 +" (NULL, '"+firstName+"', '"+name+"', '"+secondName+"', '"+email+"', '"+address+"', '"+password+"', '1', '"+accessLevel+"', '1985-06-10');";
-
-
         try {
             PreparedStatement prSt = getDbConnection().prepareStatement(insert);
             prSt.executeUpdate();
@@ -36,6 +34,22 @@ public class DBHandler extends DBConnection {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-
     }
+
+    public void dataUpdating(String id){
+        String techInsert = "UPDATE `applications_tb` SET `status` = '1' WHERE `applications_tb`.`application_id` = "+id+";";
+
+        try {
+            PreparedStatement prSt = getDbConnection().prepareStatement(techInsert);
+            prSt.executeUpdate();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
+
 }

@@ -28,7 +28,8 @@
             <ListView fx:id="inWorks" layoutX="23.0" layoutY="100.0" prefHeight="207.0" prefWidth="365.0" style="-fx-background-color: #393939;" />
             <Button fx:id="quitButton" layoutX="262.0" layoutY="29.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="51.0" style="-fx-background-color: #333; -fx-background-radius: 20;" text="Выход" textFill="WHITE" />
             <TextField fx:id="WorksTextField" layoutX="23.0" layoutY="316.0" prefHeight="25.0" prefWidth="288.0" />
-            <Button fx:id="WorksAdder" layoutX="436.0" layoutY="188.0" mnemonicParsing="false" style="-fx-background-color: #333; -fx-background-radius: 20;" text="Выполнена +1 работа" textFill="WHITE" />
+            <Button fx:id="WorksAdder" layoutX="436.0" layoutY="229.0" mnemonicParsing="false" style="-fx-background-color: #333; -fx-background-radius: 20;" text="Выполнена +1 работа" textFill="WHITE" />
+            <TextField fx:id="id_fielder" layoutX="431.0" layoutY="200.0" promptText="ID" />
          </children>
     </AnchorPane>
   </children>

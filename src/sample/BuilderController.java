@@ -48,10 +48,14 @@ public class BuilderController {
     private TextField WorksTextField;
 
     @FXML
+    private TextField id_fielder;
+
+    @FXML
     private Button WorksAdder;
 
     @FXML
     void initialize() {
+        DBHandler handler = new DBHandler();
         quitButton.setOnAction(event -> {
             System.out.println("Выход");
             quitButton.getScene().getWindow().hide();
@@ -68,6 +72,10 @@ public class BuilderController {
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.showAndWait();
+        });
+
+        WorksAdder.setOnAction(event -> {
+            handler.dataUpdating(id_fielder.getText());
         });
 
 
